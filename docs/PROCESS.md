@@ -18,6 +18,8 @@ Las decisiones no quedan solo en el historial del chat — si no están escritas
 | Estado vivo del trabajo | `STATE.md` |
 | Tareas pendientes | `TODO.md` |
 
+GitHub Issues no se usa. Las tareas viven en `TODO.md`.
+
 ## Cómo se avanza de etapa
 
 1. Verificar que todos los entregables de la etapa actual están cumplidos (ver `STAGES.md`).

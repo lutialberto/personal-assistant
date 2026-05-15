@@ -1,4 +1,6 @@
-# Cómo trabajar con el agente
+# Interacción con el agente
+
+> Este archivo es una guía para el usuario. Las instrucciones que el agente sigue están configuradas en el IDE (custom instructions de VS Code) — no en este archivo.
 
 ## Contexto entre sesiones
 

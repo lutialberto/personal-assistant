@@ -25,6 +25,10 @@ El resto de tipos (`refactor`, `chore`, `style`, `test`, `perf`) están disponib
 
 No se usan branches. Todo va a `main`.
 
+## Tags y releases
+
+No se usan tags ni releases formales.
+
 ## Ambientes
 
 > A definir. Se resolverá con comandos de ejecución (no con branches).
