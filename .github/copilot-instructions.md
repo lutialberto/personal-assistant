@@ -5,6 +5,8 @@
 - Este archivo contiene reglas estables del proyecto.
 - El estado vivo del trabajo se mantiene en `docs/STATE.md`.
 - Al iniciar una sesión, verificar que `STATE.md` y `TODO.md` reflejan el trabajo de la sesión anterior. Si algo parece sin registrar o desactualizado, avisar antes de continuar.
+- `STATE.md` contiene solo el estado actual y el próximo paso — no es un log histórico.
+- Antes de cada commit, verificar si `STATE.md` y `TODO.md` necesitan actualizarse. Si es así, actualizarlos primero e incluirlos en el mismo commit.
 
 ## Qué es
 Aplicación personal de asistencia para el día a día y largo plazo.

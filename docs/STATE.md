@@ -5,7 +5,10 @@ Mantener el contexto actual del trabajo para que el siguiente chat no tenga que 
 
 ## Estado actual
 - Etapa 0 — Infraestructura del proyecto.
-- Se está probando el flujo de contexto entre chats.
+- Revisando si quedan ítems sin documentar antes de cerrar la etapa.
+
+## Próximo paso
+- Confirmar cierre de etapa 0 y arrancar etapa 1.
 
 ## Regla de uso
 - Si cambia lo que se está haciendo, actualizar este archivo primero.
