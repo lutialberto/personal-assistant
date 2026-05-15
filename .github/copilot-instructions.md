@@ -1,5 +1,11 @@
 # Contexto del proyecto — Personal Assistant
 
+## Cómo usar este repo
+- Antes de actuar, leer `docs/STATE.md` y `TODO.md`.
+- Este archivo contiene reglas estables del proyecto.
+- El estado vivo del trabajo se mantiene en `docs/STATE.md`.
+- Al iniciar una sesión, verificar que `STATE.md` y `TODO.md` reflejan el trabajo de la sesión anterior. Si algo parece sin registrar o desactualizado, avisar antes de continuar.
+
 ## Qué es
 Aplicación personal de asistencia para el día a día y largo plazo.
 De uso propio, no se publica en tiendas.
@@ -31,6 +37,7 @@ Conventional Commits. Tipos principales: `feat`, `fix`, `docs`.
 - No crear branches.
 - No proponer backend ni APIs propias.
 - No asumir stack hasta que esté definido.
+- Si surge algo fuera de scope de la etapa actual, anotarlo en `TODO.md` con la etapa correspondiente y no resolverlo en el momento.
 
 ## Etapas del proyecto
 Ver `docs/STAGES.md` para el detalle completo.
@@ -43,4 +50,4 @@ Ver `docs/STAGES.md` para el detalle completo.
 5. Mantenimiento
 
 ## Estado actual
-Etapa 0 — Infraestructura del proyecto. Ver `TODO.md` para el detalle.
+Etapa 0 — Infraestructura del proyecto. Ver `docs/STATE.md` para el contexto vivo.
