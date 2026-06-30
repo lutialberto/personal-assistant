@@ -116,5 +116,5 @@ Objetivo: consolidar base técnica y experiencia de uso.
 9. T56 · Alerta de ítem próximo a agotarse
 
 Notas:
-- La numeración T51 está repetida en `docs/TASKS.md` (Finanzas y Transversal). Se conserva tal cual para no romper referencia histórica y debe normalizarse cuando se revise el backlog.
+- La numeración T51 está repetida en `docs/definicion/TASKS.md` (Finanzas y Transversal). Se conserva tal cual para no romper referencia histórica y debe normalizarse cuando se revise el backlog.
 - T57 depende del tipo de app elegido en etapa de arquitectura.

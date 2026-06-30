@@ -51,4 +51,4 @@ personal-assistant/
 
 ## Diseño / UI
 
-La base concreta de diseño/UI vive en [docs/DESIGN.md](docs/DESIGN.md). Este archivo solo conserva las convenciones generales del proyecto.
+La base concreta de diseño/UI vive en [docs/diseno/DESIGN.md](docs/diseno/DESIGN.md). Este archivo solo conserva las convenciones generales del proyecto.

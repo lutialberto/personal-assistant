@@ -30,9 +30,9 @@ Definir la estructura visual y de interacción de la pantalla principal del tab 
 
 ## Layouts por top tab
 
-- `Para comprar`: ver `docs/layouts/compras/LAYOUT_COMPRAS_TAB_PARA_COMPRAR.md`.
-- `Pendientes`: ver `docs/layouts/compras/LAYOUT_COMPRAS_TAB_PENDIENTES.md`.
-- `Configuración`: ver `docs/layouts/compras/LAYOUT_COMPRAS_TAB_CONFIGURACION.md`.
+- `Para comprar`: ver `docs/diseno/layouts/compras/LAYOUT_COMPRAS_TAB_PARA_COMPRAR.md`.
+- `Pendientes`: ver `docs/diseno/layouts/compras/LAYOUT_COMPRAS_TAB_PENDIENTES.md`.
+- `Configuración`: ver `docs/diseno/layouts/compras/LAYOUT_COMPRAS_TAB_CONFIGURACION.md`.
 
 ## Jerarquía de elementos
 

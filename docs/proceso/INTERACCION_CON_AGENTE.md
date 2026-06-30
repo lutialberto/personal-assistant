@@ -4,7 +4,7 @@
 
 ## Contexto entre sesiones
 
-El agente no recuerda nada entre conversaciones. `docs/STATE.md` es el puente entre sesiones — hay que mantenerlo actualizado para que el agente tenga contexto al arrancar.
+El agente no recuerda nada entre conversaciones. `docs/proceso/STATE.md` es el puente entre sesiones — hay que mantenerlo actualizado para que el agente tenga contexto al arrancar.
 
 Al cerrar una sesión de trabajo, actualizar:
 - `STATE.md` — qué se hizo, en qué punto quedó el trabajo
