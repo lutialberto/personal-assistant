@@ -31,7 +31,7 @@ No se usan tags ni releases formales.
 
 ## Ambientes
 
-> A definir. Se resolverá con comandos de ejecución (no con branches).
+Ver `docs/arquitectura/ENVIRONMENTS.md`.
 
 ## Estructura de carpetas
 
@@ -47,7 +47,22 @@ personal-assistant/
 
 ### Dentro de `/src`
 
-> A definir cuando se elija el stack.
+Ver `docs/arquitectura/STRUCTURE.md`.
+
+## Componentes genéricos
+
+Los componentes que no tienen lógica de negocio y son completamente genéricos usan el sufijo `App`:
+- `ButtonApp`, `TextApp`, `InputApp`, etc.
+
+Esto los distingue de componentes de módulo que sí pueden tener lógica propia.
+
+## Comentarios en código
+
+Solo cuando el motivo no es obvio. Tipos reservados:
+
+- `// TEMPORAL:` — código que debe eliminarse antes de mergear o subir a producción.
+- `// HINT:` — pista o recordatorio sobre cómo completar o adaptar el fragmento.
+- `// DEBUG:` — solo para depuración, no debe quedar en código final.
 
 ## Diseño / UI
 

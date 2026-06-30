@@ -22,9 +22,10 @@
 
 ## Persistencia local
 
-| Librería | Motivo |
-|---|---|
-| AsyncStorage | Persistencia key-value en dispositivo. Suficiente para los datos de la app |
+| Librería | Uso | Motivo |
+|---|---|---|
+| expo-sqlite | Datos de la app (hábitos, compras, finanzas) | Base de datos relacional en dispositivo, sin límite de tamaño |
+| expo-secure-store | Datos sensibles (tokens de Drive) | Almacenamiento seguro del sistema operativo (Keychain/Keystore) |
 
 ## Formularios
 
@@ -32,11 +33,26 @@
 |---|---|
 | React Hook Form | Manejo de formularios. Sin librería de validación adicional — validación manual simple |
 
+## Componentes de input
+
+| Librería | Motivo |
+|---|---|
+| @react-native-community/datetimepicker | Selector de fechas nativo. Útil en Hábitos y Finanzas |
+| expo-checkbox | Checkboxes |
+| react-native-pager-view | Carruseles y vistas paginadas |
+
+## UI / Feedback
+
+| Librería | Motivo |
+|---|---|
+| react-native-toast-message | Notificaciones tipo toast |
+| @expo/vector-icons | Íconos. Incluida en Expo, suficiente para el scope de la app |
+
 ## Gráficos
 
 | Librería | Motivo |
 |---|---|
-| react-native-gifted-charts | Gráficos para el módulo de Finanzas (proyección de retiro). Fácil de usar y bien documentada |
+| react-native-gifted-charts | Gráficos para el módulo de Finanzas (proyección de retiro) |
 
 ## Fechas
 
@@ -44,11 +60,12 @@
 |---|---|
 | dayjs | Operaciones de fecha para Hábitos (rachas, calendario) y Finanzas (proyecciones). Liviana (~2KB) |
 
-## Íconos
+## Tooling
 
-| Librería | Motivo |
+| Herramienta | Motivo |
 |---|---|
-| @expo/vector-icons | Incluida en Expo. Suficiente para el scope de la app |
+| Prettier | Formateo automático de código |
+| Husky + lint-staged | Pre-commit hook que ejecuta Prettier antes de cada commit |
 
 ## Distribución
 
@@ -59,3 +76,13 @@
 ## Pendiente de definir
 
 - **Backup a Drive:** el usuario tiene una implementación previa a revisar. Decisión postergada.
+
+## Diferencias respecto al template base (`rn-getting-started`)
+
+Al seguir el template base durante la creación del proyecto, tener en cuenta:
+
+| Decisión en el template | Decisión en este proyecto | Motivo |
+|---|---|---|
+| `AsyncStorage` (implícito por defecto en Expo) | `expo-sqlite` | AsyncStorage es key-value sin estructura; SQLite soporta mejor el modelo de datos relacional de la app |
+| No incluye librería de gráficos | `react-native-gifted-charts` | Necesario para el módulo de Finanzas |
+| No incluye manejo de fechas | `dayjs` | Necesario para rachas en Hábitos y proyecciones en Finanzas |

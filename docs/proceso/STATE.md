@@ -16,7 +16,8 @@ Mantener el contexto actual del trabajo para que el siguiente chat no tenga que 
 - Diseño y layouts completos en `docs/diseno/`.
 
 ## Próximo paso
-- Continuar Etapa 2: definir estructura de `/src` (depende del stack ya elegido).
+- Revisar implementación previa de backup a Drive del usuario y documentar estrategia en `docs/arquitectura/PERSISTENCE.md`.
+- Verificar si todos los entregables de Etapa 2 están completos para cerrar la etapa.
 
 ## Regla de uso
 - Si cambia lo que se está haciendo, actualizar este archivo primero.

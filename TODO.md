@@ -33,9 +33,8 @@
 
 ## Etapa 2
 - [x] Elegir stack tecnológico → `docs/arquitectura/STACK.md`
-- Definir estructura interna de `/src`
-- Definir comandos de ambientes (local / deploy)
-- Estrategia de deploy
-- Seguridad
-- Persistencia (storage local + backup Drive — pendiente revisar implementación previa)
-- Manejo de errores y logging
+- [x] Definir estructura interna de `/src` → `docs/arquitectura/STRUCTURE.md`
+- [x] Definir ambientes, comandos y deploy → `docs/arquitectura/ENVIRONMENTS.md`
+- [x] Seguridad → `docs/arquitectura/SECURITY.md`
+- [x] Persistencia → `docs/arquitectura/PERSISTENCE.md` (backup Drive pendiente de revisar implementación previa)
+- [x] Manejo de errores y logging → `docs/arquitectura/ERRORS.md`
