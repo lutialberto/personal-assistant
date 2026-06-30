@@ -23,8 +23,11 @@ GitHub Issues no se usa. Las tareas viven en `TODO.md`.
 ## Cómo se avanza de etapa
 
 1. Verificar que todos los entregables de la etapa actual están cumplidos (ver `STAGES.md`).
-2. Actualizar `STATE.md` con la nueva etapa.
-3. Actualizar el estado en `STAGES.md`.
+2. Confirmar explícitamente con el usuario que la etapa puede cerrarse.
+3. Actualizar `STATE.md` con la nueva etapa.
+4. Actualizar el estado en `STAGES.md`.
+
+La etapa no cambia solo por completar entregables: hace falta el ok explícito del usuario.
 
 ## Cómo se maneja algo fuera de scope
 

@@ -51,4 +51,4 @@ personal-assistant/
 
 ## Diseño / UI
 
-> A definir cuando se trabaje puntualmente sobre eso.
+La base concreta de diseño/UI vive en [docs/DESIGN.md](docs/DESIGN.md). Este archivo solo conserva las convenciones generales del proyecto.

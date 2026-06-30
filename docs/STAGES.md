@@ -21,8 +21,12 @@ Qué es la app, qué resuelve, qué no es. Antes de tocar arquitectura o código
 - Descripción de la app: propósito, problema que resuelve, qué no es
 - Lista de funcionalidades, separando lo que va al MVP de lo que va a iteraciones posteriores
 - Desglose de tareas por funcionalidad
-- Orden y prioridad de tareas
 - Diseño de vistas: qué pantallas existen y qué contiene cada una
+
+**Checklist UX mínima para cierre de etapa:**
+- Estados por vista definidos (vacío, error, confirmación y bloqueos)
+- Reglas de interacción clave definidas (confirmar/cancelar, efectos de acciones sensibles)
+- Criterios UX de aceptación por vista documentados
 
 **Cierre:** existe un documento claro que permite pasar a arquitectura sin ambigüedad.
 
@@ -70,4 +74,6 @@ Sin criterio de cierre — es un proceso continuo.
 
 ---
 
-**Estado actual:** Etapa 0
+**Estado actual:** Etapa 1
+
+**Regla de avance:** aunque se completen entregables, no se cambia de etapa sin confirmación explícita del usuario.
