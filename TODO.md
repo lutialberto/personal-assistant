@@ -26,8 +26,8 @@
 - Crear proyecto con template base e instalar dependencias
 - Configurar Expo Router con estructura de navegación global
 - Inicializar SQLite con sistema de migraciones
-- Integrar Drive backup
+- Integrar Drive backup como entidad dummy (auth + upload + download funcionales; datos reales de módulos se integran en Etapa 4)
 - Configurar variables de entorno y `app.config.js`
-- Implementar tema global (`hooks/theme/`)
-- Implementar componentes compartidos (buttons, texts, containers, forms, toast)
+- Implementar tema global (`hooks/theme/`): heredar del template y ajustar a tokens de `docs/diseno/DESIGN.md`
+- Determinar componentes compartidos a usar/descartar revisando el README y la implementación del template
 - Implementar Error Boundary global

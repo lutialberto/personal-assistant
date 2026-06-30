@@ -56,13 +56,13 @@ Implementación de todo lo transversal antes de tocar pantallas de módulos. Per
 - Proyecto creado con el template base y dependencias instaladas
 - Expo Router configurado con la estructura de navegación global
 - SQLite inicializado con sistema de migraciones
-- Drive backup integrado
+- Drive backup integrado como entidad dummy: auth + upload + download funcionales con datos de prueba. La integración con datos reales de cada módulo se hace en Etapa 4.
 - Variables de entorno y `app.config.js` configurados
-- Tema global implementado (`hooks/theme/`)
-- Componentes compartidos implementados (buttons, texts, containers, forms, toast)
+- Tema global implementado (`hooks/theme/`): se hereda la implementación del template y se ajusta a los tokens definidos en `docs/diseno/DESIGN.md`. Revisar qué tan cerca está el template antes de modificar.
+- Componentes compartidos: se determina cuáles usar y cuáles descartar al revisar el README y la implementación del template.
 - Error Boundary global
 
-**Cierre:** la app arranca, navega entre tabs vacíos, persiste datos básicos y el backup a Drive funciona. Todo lo compartido está listo para ser usado por los módulos.
+**Cierre:** la app arranca, navega entre tabs vacíos, persiste datos básicos y el backup a Drive funciona como entidad dummy. Todo lo compartido está listo para ser usado por los módulos.
 
 ---
 
