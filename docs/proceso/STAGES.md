@@ -49,7 +49,24 @@ Todas las decisiones técnicas tomadas y documentadas antes de escribir código.
 
 ---
 
-## Etapa 3 — MVP
+## Etapa 3 — Base técnica
+Implementación de todo lo transversal antes de tocar pantallas de módulos. Permite detectar problemas de arquitectura o diseño antes de estar metido en el desarrollo de features.
+
+**Entregables:**
+- Proyecto creado con el template base y dependencias instaladas
+- Expo Router configurado con la estructura de navegación global
+- SQLite inicializado con sistema de migraciones
+- Drive backup integrado
+- Variables de entorno y `app.config.js` configurados
+- Tema global implementado (`hooks/theme/`)
+- Componentes compartidos implementados (buttons, texts, containers, forms, toast)
+- Error Boundary global
+
+**Cierre:** la app arranca, navega entre tabs vacíos, persiste datos básicos y el backup a Drive funciona. Todo lo compartido está listo para ser usado por los módulos.
+
+---
+
+## Etapa 4 — MVP
 La versión mínima funcional que ya sirve para uso real.
 
 **Entregables:**
@@ -60,20 +77,20 @@ La versión mínima funcional que ya sirve para uso real.
 
 ---
 
-## Etapa 4 — Iteraciones
+## Etapa 5 — Iteraciones
 Bloques de features agrupadas por valor. Cada iteración agrega funcionalidad sobre el MVP.
 
 Sin criterio de cierre — es un proceso continuo.
 
 ---
 
-## Etapa 5 — Mantenimiento
+## Etapa 6 — Mantenimiento
 Evolución continua. Mejoras, refactors, nuevas ideas.
 
 Sin criterio de cierre — es un proceso continuo.
 
 ---
 
-**Estado actual:** Etapa 1
+**Estado actual:** Etapa 3
 
 **Regla de avance:** aunque se completen entregables, no se cambia de etapa sin confirmación explícita del usuario.

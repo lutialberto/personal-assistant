@@ -32,7 +32,22 @@ El flujo es: la app lee y escribe siempre en el dispositivo. Drive es solo backu
 ## Backup a Drive
 
 - Feature propia de la app, no un script externo.
-- Estrategia a definir cuando se revise la implementación previa del usuario.
+- Librería de autenticación: `@react-native-google-signin/google-signin`.
+- El backup se exporta como JSON desde SQLite y se sube a una carpeta en Drive del usuario.
+- Drive no es la fuente de verdad — es solo copia de seguridad. La restauración importa desde Drive hacia SQLite.
+- El archivo de backup incluye: versión del schema, timestamp, fecha de exportación y los datos.
+- La fecha del último backup se guarda en SQLite (no en AsyncStorage).
+- El `webClientId` de Google va en `.env`, no hardcodeado.
+
+### Estructura de archivos en `src/`
+
+| Archivo original | Destino en `src/` |
+|---|---|
+| `services/googleDriveService.ts` | `src/services/googleDriveService.ts` |
+| `hooks/useGoogleDrive.ts` | `src/hooks/useGoogleDrive.ts` |
+| `hooks/useBackup.ts` | `src/hooks/useBackup.ts` |
+| `config/googleDriveConfig.ts` | `src/constants/googleDrive.ts` (webClientId desde `.env`) |
+| `config/backupConfig.ts` | `src/constants/backup.ts` |
 
 ## Lo que no usamos
 

@@ -73,9 +73,11 @@
 |---|---|
 | EAS Build | Build y distribución vía Expo Application Services. App de uso personal, no publicada en tiendas |
 
-## Pendiente de definir
+## Autenticación Google / Drive
 
-- **Backup a Drive:** el usuario tiene una implementación previa a revisar. Decisión postergada.
+| Librería | Motivo |
+|---|---|
+| @react-native-google-signin/google-signin | Autenticación con Google y acceso a tokens para Drive API |
 
 ## Diferencias respecto al template base (`rn-getting-started`)
 
@@ -86,3 +88,4 @@ Al seguir el template base durante la creación del proyecto, tener en cuenta:
 | `AsyncStorage` (implícito por defecto en Expo) | `expo-sqlite` | AsyncStorage es key-value sin estructura; SQLite soporta mejor el modelo de datos relacional de la app |
 | No incluye librería de gráficos | `react-native-gifted-charts` | Necesario para el módulo de Finanzas |
 | No incluye manejo de fechas | `dayjs` | Necesario para rachas en Hábitos y proyecciones en Finanzas |
+| No incluye integración con Google | `@react-native-google-signin/google-signin` | Necesario para backup a Drive |

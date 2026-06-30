@@ -5,19 +5,11 @@ Mantener el contexto actual del trabajo para que el siguiente chat no tenga que 
 
 ## Estado actual
 
-- Etapa 2 — Arquitectura. Etapa 1 cerrada.
-- Se reorganizó `docs/` en subcarpetas: `proceso/`, `definicion/`, `arquitectura/`, `diseno/`.
-- Stack tecnológico definido en `docs/arquitectura/STACK.md`.
-- Entregables de Etapa 1 completados:
-	- `docs/definicion/DEFINITION.md`
-	- `docs/definicion/TASKS.md`
-	- `docs/definicion/PRIORITY.md`
-	- `docs/definicion/VIEWS.md`
-- Diseño y layouts completos en `docs/diseno/`.
+- Etapa 3 — Base técnica. Etapa 2 cerrada.
+- Toda la arquitectura documentada en `docs/arquitectura/`.
 
 ## Próximo paso
-- Revisar implementación previa de backup a Drive del usuario y documentar estrategia en `docs/arquitectura/PERSISTENCE.md`.
-- Verificar si todos los entregables de Etapa 2 están completos para cerrar la etapa.
+- Iniciar Etapa 3: crear el proyecto con el template base y arrancar con la implementación de lo transversal.
 
 ## Regla de uso
 - Si cambia lo que se está haciendo, actualizar este archivo primero.

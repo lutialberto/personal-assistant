@@ -47,9 +47,10 @@ Ver `docs/proceso/STAGES.md` para el detalle completo.
 0. Infraestructura
 1. Definición
 2. Arquitectura
-3. MVP
-4. Iteraciones
-5. Mantenimiento
+3. Base técnica
+4. MVP
+5. Iteraciones
+6. Mantenimiento
 
 ## Estado actual
-Etapa 2 — Arquitectura. Ver `docs/proceso/STATE.md` para el contexto vivo.
+Etapa 3 — Base técnica. Ver `docs/proceso/STATE.md` para el contexto vivo.
