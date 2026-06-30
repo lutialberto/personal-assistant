@@ -39,14 +39,16 @@ El flujo es: la app lee y escribe siempre en el dispositivo. Drive es solo backu
 - La fecha del último backup se guarda en SQLite (no en AsyncStorage).
 - El `webClientId` de Google va en `.env`, no hardcodeado.
 
-### Estructura de archivos en `src/`
+### Archivos de la integración Drive
 
-| Archivo original | Destino en `src/` |
+Los archivos fuente están en `C:\Users\betom\OneDrive\Desktop\Proyectos\tasks\integrations\google-drive-bkp\`. Ya fueron revisados y adaptados según la arquitectura de este proyecto.
+
+| Archivo original | Ruta en `src/` |
 |---|---|
 | `services/googleDriveService.ts` | `src/services/googleDriveService.ts` |
 | `hooks/useGoogleDrive.ts` | `src/hooks/useGoogleDrive.ts` |
 | `hooks/useBackup.ts` | `src/hooks/useBackup.ts` |
-| `config/googleDriveConfig.ts` | `src/constants/googleDrive.ts` (webClientId desde `.env`) |
+| `config/googleDriveConfig.ts` | `src/constants/googleDrive.ts` — `webClientId` desde `.env` |
 | `config/backupConfig.ts` | `src/constants/backup.ts` |
 
 ## Lo que no usamos

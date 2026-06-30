@@ -81,6 +81,12 @@
 
 ## Diferencias respecto al template base (`rn-getting-started`)
 
+**Path del template:** `C:\Users\betom\OneDrive\Desktop\Proyectos\rn-getting-started\rn-getting-started`
+
+El template provee: componentes base (buttons, containers, forms, texts, toast), `hooks/theme/` y snippets de VSCode. El Drive backup **no** está incluido — se implementa desde cero en Etapa 3.
+
+Para la configuración inicial, seguir el README del template y determinar qué se usa y qué se descarta.
+
 Al seguir el template base durante la creación del proyecto, tener en cuenta:
 
 | Decisión en el template | Decisión en este proyecto | Motivo |
