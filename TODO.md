@@ -33,6 +33,9 @@
 - [ ] Editar `app.config.js` (IS_DEV, IS_TEST, nombre, package ID) — (sección 6.3)
 - [ ] Editar `eas.json` (perfiles de build) — (sección 6.4)
 
+### Limpieza post-setup
+- [ ] Revisar y eliminar archivos del template que no corresponden: `src/AGENTS.md`, `src/CLAUDE.md`, `src/.claude/settings.json`
+
 ### Base técnica
 - [ ] Configurar Expo Router con estructura de navegación global
 - [ ] Inicializar SQLite con sistema de migraciones
