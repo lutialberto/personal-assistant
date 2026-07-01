@@ -23,11 +23,20 @@
 - [x] Manejo de errores y logging → `docs/arquitectura/ERRORS.md`
 
 ## Etapa 3
-- Crear proyecto con template base e instalar dependencias
-- Configurar Expo Router con estructura de navegación global
-- Inicializar SQLite con sistema de migraciones
-- Integrar Drive backup como entidad dummy (auth + upload + download funcionales; datos reales de módulos se integran en Etapa 4)
-- Configurar variables de entorno y `app.config.js`
-- Implementar tema global (`hooks/theme/`): heredar del template y ajustar a tokens de `docs/diseno/DESIGN.md`
-- Determinar componentes compartidos a usar/descartar revisando el README y la implementación del template
-- Implementar Error Boundary global
+
+### Setup del proyecto (README del template: `C:\Users\betom\OneDrive\Desktop\Proyectos\rn-getting-started\rn-getting-started\readme.md`)
+- [x] Crear proyecto: `npx create-expo-app . --template tabs` en `src/` — (sección 2)
+- [x] Correr `setup-base.bat` (`app/`, `hooks/theme/`, `assets/fonts/`, `.vscode/`) — (sección 4.1)
+- [ ] Instalar dependencias — (sección 3)
+- [ ] Copiar snippets de VSCode (`copy-snippet.bat`) — (sección 7)
+- [ ] Correr `setup-env.bat` y renombrar `app.json` → `app.config.js` — (sección 6.2)
+- [ ] Editar `app.config.js` (IS_DEV, IS_TEST, nombre, package ID) — (sección 6.3)
+- [ ] Editar `eas.json` (perfiles de build) — (sección 6.4)
+
+### Base técnica
+- [ ] Configurar Expo Router con estructura de navegación global
+- [ ] Inicializar SQLite con sistema de migraciones
+- [ ] Integrar Drive backup como entidad dummy (auth + upload + download funcionales; datos reales de módulos se integran en Etapa 4)
+- [ ] Implementar tema global (`hooks/theme/`): ajustar a tokens de `docs/diseno/DESIGN.md`
+- [ ] Determinar componentes compartidos a usar/descartar revisando el template
+- [ ] Implementar Error Boundary global

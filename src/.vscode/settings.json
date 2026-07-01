@@ -1,0 +1,13 @@
+{
+  "prettier.jsxSingleQuote": false,
+  "prettier.singleQuote": false,
+  "prettier.bracketSpacing": true,
+  "prettier.arrowParens": "avoid",
+  "prettier.bracketSameLine": true,
+  "prettier.trailingComma": "all",
+  "prettier.semi": true,
+  "prettier.tabWidth": 2,
+  "prettier.printWidth": 80,
+  "todohighlight.include": ["**/*.js", "**/*.jsx", "**/*.ts", "**/*.tsx"],
+  "todohighlight.keywords": ["DEBUG:", "REVIEW:", "TODO:", "TEMPORAL:", "HINT:"]
+}
