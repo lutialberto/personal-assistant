@@ -1,0 +1,159 @@
+{
+  // Place your rn-fwk workspace snippets here. Each snippet is defined under a snippet name and has a scope, prefix, body and
+  // description. Add comma separated ids of the languages where the snippet is applicable in the scope field. If scope
+  // is left empty or omitted, the snippet gets applied to all languages. The prefix is what is
+  // used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
+  // $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders.
+  // Placeholders with the same ids are connected.
+  // Example:
+  // "Print to console": {
+  // 	"scope": "javascript,typescript",
+  // 	"prefix": "log",
+  // 	"body": [
+  // 		"console.log('$1');",
+  // 		"$2"
+  // 	],
+  // 	"description": "Log output to console"
+  // }
+  "Button": {
+    "scope": "typescriptreact",
+    "prefix": "appButton",
+    "body": [
+      "<ButtonApp$1 label={'${2:Button}'} onPress={${3|() => {\\}|handlePress}} />",
+    ],
+    "description": "Button component",
+  },
+  "Text": {
+    "scope": "typescriptreact",
+    "prefix": "appText",
+    "body": ["<TextApp$1>${2:Text Custom...}</TextApp>"],
+    "description": "Text component",
+  },
+  "Icon": {
+    "scope": "typescriptreact",
+    "prefix": "appIcon",
+    "body": [
+      "<IconApp$0",
+      "  color={${1:colors.text}}",
+      "  name=\"${2:close}\"",
+      "  size={${3:14}}",
+      "/>",
+    ],
+    "description": "IconApp component",
+  },
+  "Modal": {
+    "scope": "typescriptreact",
+    "prefix": "appModal",
+    "body": [
+      "<ModalApp$0 modalProps={{ visible: ${1|true|isModalVisible}, onDismiss: ${2|() => {\\}|setIsModalVisible(false)}}}>",
+      " <Text>GenericModal</Text>",
+      "</ModalApp>",
+    ],
+    "description": "Modal component",
+  },
+  "BottomSheet": {
+    "scope": "typescriptreact",
+    "prefix": "appBottomSheet",
+    "body": [
+      "<BottomSheetApp$0 modalProps={{ visible: ${1|true|isBottomSheetVisible}, onDismiss: ${2|() => {\\}|setIsBottomSheetVisible(false)}}}>",
+      " <Text>GenericModal</Text>",
+      "</BottomSheetApp>",
+    ],
+    "description": "BottomSheet component",
+  },
+  "Spinner": {
+    "scope": "typescriptreact",
+    "prefix": "appSpinner",
+    "body": [
+      "<SpinnerApp$0",
+      " //HINT: ajustar prop segun variable de estado",
+      " visible={${1|true|isLoading|false}}",
+      " style={{",
+      "  //HINT: para definir el tamaño del spinner, usar width, height y/o flex",
+      "  //flex: 1,//usar este",
+      "  //height: 100,//o este",
+      "  //DEBUG: se agrega un border para ver el spinner y sus límites",
+      "  borderWidth: 1,",
+      "  borderColor: 'red',",
+      " }}",
+      ">",
+      "  <Text>Spinner Result</Text>",
+      "</SpinnerApp>",
+    ],
+    "description": "Spinner component",
+  },
+  "Carrousel": {
+    "scope": "typescriptreact",
+    "prefix": "appCarrousel",
+    "body": [
+      "<CarrouselApp${0}",
+      "  carrouselContainerStyle={{",
+      "    //HINT: para definir el tamaño del carrusel, usar width y height",
+      "    width: 300,",
+      "    height: 200,",
+      "  }}",
+      "  items={[",
+      "    //HINT: los items del carrusel son elementos de JSX. Crearlos a continuacion, importar componente o array de componentes",
+      "    <TextApp>1</TextApp>,",
+      "    <TextApp>2</TextApp>,",
+      "    <TextApp>3</TextApp>,",
+      "  ]}",
+      "/>",
+    ],
+    "description": "Carrousel component",
+  },
+  "Accordion": {
+    "scope": "typescriptreact",
+    "prefix": "appAccordion",
+    "body": [
+      "<AccordionApp${0}",
+      "  //HINT: para definir el tamaño del accordion, usar width y flex",
+      "  containerStyle={{width: '90%'}}",
+      "  //HINT: los items del accordion son objetos con titulo y cuerpo que representa un elemento de JSX",
+      "  items={[1, 2, 3].map(item => ({",
+      "    title: \"Accordion Item \" + item,",
+      "    body: <TextApp>Accordion Item Body{item}</TextApp>,",
+      "  }))}",
+      "/>",
+    ],
+    "description": "Accordion component",
+  },
+  "BottomTabs": {
+    "scope": "typescriptreact",
+    "prefix": "appBottomTabs",
+    "body": [
+      "<BottomTabsApp$0",
+      "  tabItems={[",
+      "    { name: \"default\", title: \"Solapa default\", icon:\"code\", },",
+      "    { name: \"tab1\", title: \"Solapa 2\", icon:\"code\", },",
+      "    { name: \"tab2\", title: \"Solapa 3\", icon:\"code\", },",
+      "  ]}",
+      "/>",
+    ],
+    "description": "BottomTabs component",
+  },
+  "TopTabs": {
+    "scope": "typescriptreact",
+    "prefix": "appTopTabs",
+    "body": [
+      "<TopTabsApp$0",
+      "  tabItems={[",
+      "    { name: \"default\", title: \"Solapa default\" },",
+      "    { name: \"tab1\", title: \"Solapa 2\" },",
+      "    { name: \"tab2\", title: \"Solapa 3\" },",
+      "  ]}",
+      "/>",
+    ],
+    "description": "TopTabs component",
+  },
+  "CardApp": {
+    "scope": "typescriptreact",
+    "prefix": "appCard",
+    "body": [
+      "<CardApp${0}>",
+      "  <TextApp>${1:Card content}</TextApp>",
+      "</CardApp>",
+    ],
+    "description": "CardApp component",
+  },
+}
