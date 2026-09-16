@@ -1,20 +1,19 @@
-import { Link, Stack } from "expo-router";
-import { StyleSheet } from "react-native";
+import { Link, Stack } from 'expo-router';
+import { StyleSheet } from 'react-native';
 
-import { ViewThemed } from "@/components/containers/ViewThemed";
-import { TextApp } from "@/components/texts/TextApp";
+import { Text, View } from '@/components/Themed';
 
 export default function NotFoundScreen() {
   return (
     <>
-      <Stack.Screen options={{ title: "Oops!" }} />
-      <ViewThemed style={styles.container}>
-        <TextApp style={styles.title}>This screen doesn't exist.</TextApp>
+      <Stack.Screen options={{ title: 'Oops!' }} />
+      <View style={styles.container}>
+        <Text style={styles.title}>This screen doesn't exist.</Text>
 
         <Link href="/" style={styles.link}>
-          <TextApp style={styles.linkText}>Go to home screen!</TextApp>
+          <Text style={styles.linkText}>Go to home screen!</Text>
         </Link>
-      </ViewThemed>
+      </View>
     </>
   );
 }
@@ -22,13 +21,13 @@ export default function NotFoundScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: "center",
-    justifyContent: "center",
+    alignItems: 'center',
+    justifyContent: 'center',
     padding: 20,
   },
   title: {
     fontSize: 20,
-    fontWeight: "bold",
+    fontWeight: 'bold',
   },
   link: {
     marginTop: 15,
@@ -36,6 +35,6 @@ const styles = StyleSheet.create({
   },
   linkText: {
     fontSize: 14,
-    color: "#2e78b7",
+    color: '#2e78b7',
   },
 });

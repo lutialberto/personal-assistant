@@ -6,21 +6,14 @@ Mantener el contexto actual del trabajo para que el siguiente chat no tenga que 
 ## Estado actual
 
 - Etapa 3 — Base técnica. Etapa 2 cerrada.
-- Dependencias de la sección 3 instaladas en `src/`.
-- Toda la arquitectura documentada en `docs/arquitectura/`.
-- Snippets de VSCode copiados, `.env`/`.env.test`/`.env.production`/`.env.local` copiados a `src/`, y `app.json` reemplazado por `app.config.js` (nombre "Personal Assistant", package `com.personalassistant`, ver `docs/arquitectura/ENVIRONMENTS.md`).
-- `eas build:configure` ejecutado correctamente dentro de `src/` (Android configurado).
-- `eas.json` actualizado con perfiles `development`, `test` y `production` según `docs/arquitectura/ENVIRONMENTS.md`.
-- El perfil `test` queda preparado como APK interno autocontenido para instalar sin Metro.
-- Se removió el `prepare` de `src/package.json` para que EAS no ejecute Husky durante `npm ci`.
-- Flujo de build normalizado: `android:apk` vuelve al comando estándar `eas build --profile test --platform android`.
-- Lockfile regenerado con npm `10.9.8` y verificado con `npm ci --include=dev` en `src/`.
-- Limpieza post-setup completada: eliminados `src/AGENTS.md`, `src/CLAUDE.md` y `src/.claude/settings.json`.
-- Nota: `_commands/copy-env.bat` del template tiene un bug (rutas relativas sin `%~dp0`), no se usó; los archivos se copiaron a mano.
-- `node_modules/prettier` estaba corrupto (faltaba `bin/`); se reinstaló localmente en `src/`.
+- Se reinició `src/` desde cero con `create-expo-app` (`tabs`) para volver al flujo oficial sin customizaciones.
+- `eas build:configure` ejecutado de nuevo en el proyecto limpio, con `eas.json` generado por CLI.
+- El build interno Android (`preview`) está configurado como APK (`android.buildType = apk`).
+- `package.json` incluye script estándar `android:apk` -> `eas build --profile preview --platform android --clear-cache`.
+- El build remoto más reciente sigue fallando en `npm ci` (`INSTALL_DEPENDENCIES`) y se está investigando compatibilidad de lockfile con el worker Linux de EAS.
 
 ## Próximo paso
-- Configurar Expo Router con estructura de navegación global.
+- Resolver el fallo de `npm ci` en EAS Build para obtener el primer APK del proyecto limpio.
 
 ## Regla de uso
 - Si cambia lo que se está haciendo, actualizar este archivo primero.

@@ -1,32 +1,70 @@
-import BottomTabsApp from "@/components/containers/tabs/bottomTabs/BottomTabsApp";
-import { GestureHandlerRootView } from 'react-native-gesture-handler';
-import { Drawer } from 'expo-router/drawer';
+import { SymbolView } from 'expo-symbols';
+import { Link, Tabs } from 'expo-router';
+import { Platform, Pressable } from 'react-native';
+
+import Colors from '@/constants/Colors';
+import { useColorScheme } from '@/components/useColorScheme';
+import { useClientOnlyValue } from '@/components/useClientOnlyValue';
 
 export default function TabLayout() {
+  const colorScheme = useColorScheme();
+
   return (
-    // <BottomTabsApp
-    //   tabItems={[
-    //     { name: "index", title: "Tab One", icon: "code" },
-    //     { name: "two", title: "Tab Two", icon: "code" },
-    //   ]}
-    // />
-    <GestureHandlerRootView style={{ flex: 1 }}>
-      <Drawer>
-        <Drawer.Screen
-          name="index" // This is the name of the page and must match the url from root
-          options={{
-            drawerLabel: 'Tab One',
-            title: 'Tab one',
-          }}
-        />
-        <Drawer.Screen
-          name="two"
-          options={{
-            drawerLabel: 'Tab Two',
-            title: 'Tab two',
-          }}
-        />
-      </Drawer>
-    </GestureHandlerRootView>
+    <Tabs
+      screenOptions={{
+        tabBarActiveTintColor: Colors[colorScheme].tint,
+        // Disable the static render of the header on web
+        // to prevent a hydration error in React Navigation v6.
+        headerShown: useClientOnlyValue(false, true),
+      }}>
+      <Tabs.Screen
+        name="index"
+        options={{
+          title: 'Tab One',
+          tabBarIcon: ({ color }) => (
+            <SymbolView
+              name={{
+                ios: 'chevron.left.forwardslash.chevron.right',
+                android: 'code',
+                web: 'code',
+              }}
+              tintColor={color}
+              size={28}
+            />
+          ),
+          headerRight: () => (
+            <Link href="/modal" asChild>
+              <Pressable style={{ marginRight: 15 }}>
+                {({ pressed }) => (
+                  <SymbolView
+                    name={{ ios: 'info.circle', android: 'info', web: 'info' }}
+                    size={25}
+                    tintColor={Colors[colorScheme].text}
+                    style={{ opacity: pressed ? 0.5 : 1 }}
+                  />
+                )}
+              </Pressable>
+            </Link>
+          ),
+        }}
+      />
+      <Tabs.Screen
+        name="two"
+        options={{
+          title: 'Tab Two',
+          tabBarIcon: ({ color }) => (
+            <SymbolView
+              name={{
+                ios: 'chevron.left.forwardslash.chevron.right',
+                android: 'code',
+                web: 'code',
+              }}
+              tintColor={color}
+              size={28}
+            />
+          ),
+        }}
+      />
+    </Tabs>
   );
 }
