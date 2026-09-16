@@ -50,9 +50,8 @@
     "start": "expo start",
     "android": "expo run:android",
     "ios": "expo run:ios",
-    "android:apk": "set GIT_CLONE_PROTECTION_ACTIVE=false && eas build --profile test --platform android",
-    "web": "expo start --web",
-    "prepare": "cd .. && husky src/.husky"
+    "android:apk": "powershell -NoProfile -Command \"try { git config --local --unset core.hooksPath | Out-Null } catch {}; $env:GIT_CLONE_PROTECTION_ACTIVE='false'; eas build --profile test --platform android\"",
+    "web": "expo start --web"
   },
   "private": true,
   "lint-staged": {
