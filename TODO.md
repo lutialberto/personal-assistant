@@ -31,11 +31,11 @@
 - [x] Copiar snippets de VSCode (`copy-snippet.bat`) — (sección 7)
 - [x] Copiar archivos de entorno y renombrar `app.json` → `app.config.js` — (sección 6.2) (`copy-env.bat` del template tiene un bug de rutas relativas; se copiaron los `.env*` a mano)
 - [x] Editar `app.config.js` (IS_DEV, IS_TEST, nombre, package ID) — (sección 6.3)
-- [ ] Correr `eas build:configure` (requiere login EAS) — (sección 6.1)
-- [ ] Editar `eas.json` (perfiles de build) — (sección 6.4, depende del paso anterior)
+- [x] Correr `eas build:configure` (requiere login EAS) — (sección 6.1)
+- [x] Editar `eas.json` (perfiles de build) — (sección 6.4, depende del paso anterior)
 
 ### Limpieza post-setup
-- [ ] Revisar y eliminar archivos del template que no corresponden: `src/AGENTS.md`, `src/CLAUDE.md`, `src/.claude/settings.json`
+- [x] Revisar y eliminar archivos del template que no corresponden: `src/AGENTS.md`, `src/CLAUDE.md`, `src/.claude/settings.json`
 
 ### Base técnica
 - [ ] Configurar Expo Router con estructura de navegación global

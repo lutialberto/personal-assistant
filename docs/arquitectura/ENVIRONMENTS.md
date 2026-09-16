@@ -41,13 +41,16 @@ Esto permite instalar los tres ambientes en el mismo dispositivo como apps separ
       "env": { "APP_VARIANT": "development" }
     },
     "test": {
-      "extends": "development",
+      "distribution": "internal",
+      "android": { "buildType": "apk" },
       "env": { "APP_VARIANT": "test" }
     },
     "production": {}
   }
 }
 ```
+
+El perfil `development` se usa con Metro y `developmentClient: true`. El perfil `test` genera un APK interno autocontenido para instalar y usar sin levantar nada local.
 
 ### Variables de entorno
 
@@ -61,6 +64,6 @@ Esto permite instalar los tres ambientes en el mismo dispositivo como apps separ
 |---|---|
 | Iniciar en local | `npx expo start` |
 | Build development (Android) | `eas build --profile development --platform android` |
-| Build test (Android) | `eas build --profile test --platform android` |
+| Build test / APK interno (Android) | `eas build --profile test --platform android` |
 | Build production (Android) | `eas build --profile production --platform android` |
 | Configurar EAS | `eas build:configure` |
