@@ -13,7 +13,8 @@ Mantener el contexto actual del trabajo para que el siguiente chat no tenga que 
 - `eas.json` actualizado con perfiles `development`, `test` y `production` según `docs/arquitectura/ENVIRONMENTS.md`.
 - El perfil `test` queda preparado como APK interno autocontenido para instalar sin Metro.
 - Se removió el `prepare` de `src/package.json` para que EAS no ejecute Husky durante `npm ci`.
-- El atajo `src/package.json -> android:apk` limpia `core.hooksPath` local y desactiva `GIT_CLONE_PROTECTION_ACTIVE` antes de llamar a EAS.
+- Flujo de build normalizado: `android:apk` vuelve al comando estándar `eas build --profile test --platform android`.
+- Lockfile regenerado con npm `10.9.8` y verificado con `npm ci --include=dev` en `src/`.
 - Limpieza post-setup completada: eliminados `src/AGENTS.md`, `src/CLAUDE.md` y `src/.claude/settings.json`.
 - Nota: `_commands/copy-env.bat` del template tiene un bug (rutas relativas sin `%~dp0`), no se usó; los archivos se copiaron a mano.
 - `node_modules/prettier` estaba corrupto (faltaba `bin/`); se reinstaló localmente en `src/`.

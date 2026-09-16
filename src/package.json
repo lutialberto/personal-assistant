@@ -36,6 +36,7 @@
     "react-native-toast-message": "^2.4.0",
     "react-native-web": "~0.21.0",
     "react-native-worklets": "0.10.1",
+    "src": "file:",
     "zustand": "^5.0.14"
   },
   "devDependencies": {
@@ -50,9 +51,10 @@
     "start": "expo start",
     "android": "expo run:android",
     "ios": "expo run:ios",
-    "android:apk": "powershell -NoProfile -Command \"try { git config --local --unset core.hooksPath | Out-Null } catch {}; $env:GIT_CLONE_PROTECTION_ACTIVE='false'; eas build --profile test --platform android\"",
+    "android:apk": "eas build --profile test --platform android",
     "web": "expo start --web"
   },
+  "packageManager": "npm@10.9.8",
   "private": true,
   "lint-staged": {
     "*.{js,jsx,ts,tsx,json}": "prettier --write"
