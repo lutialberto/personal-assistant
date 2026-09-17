@@ -2,7 +2,6 @@ import {
   StyleProp,
   StyleSheet,
   TextStyle,
-  useColorScheme,
   ViewProps,
   ViewStyle,
 } from "react-native";

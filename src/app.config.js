@@ -9,7 +9,7 @@ export default {
     orientation: "portrait",
     icon: "./assets/images/icon.png",
     scheme: "personal-assistant",
-    userInterfaceStyle: "automatic",
+    userInterfaceStyle: "light",
     ios: {
       supportsTablet: true,
       bundleIdentifier:

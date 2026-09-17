@@ -1,27 +1,13 @@
 import Colors from "@/hooks/theme/Colors";
-import { useColorScheme } from "react-native";
 
 /**
- * @description This hook returns the theme color based on the current color scheme of the device.
+ * @description This hook returns the app's theme colors. The app doesn't support dark mode.
  * @snippet hookTheme
  * @example
- * - On the root app component, wrap the app with the ThemeProvider and set the theme based on the color scheme of the device.
  * ```tsx
- * return (
- *   <ThemeProvider value={colorScheme === "dark" ? DarkTheme : DefaultTheme}>
- *     <Stack>
- *       {...}
- *     </Stack>
- *   </ThemeProvider>
- * )
- * ```
- * - Use the hook in any component to get the current theme color.
- * ```tsx
- * const themeColor = useThemeColor();
+ * const colors = useThemeColor();
  * ```
  */
 export default function useThemeColor() {
-  const theme = useColorScheme() ?? "light";
-
-  return theme === "dark" ? Colors.dark : Colors.light;
+  return Colors;
 }
