@@ -48,12 +48,7 @@ function RootLayoutNav() {
         backgroundColor={theme.colors.background}
       />
       <Try catch={MainFallbackApp}>
-        <Stack
-          screenOptions={{
-            headerStyle: { backgroundColor: "red" },
-            headerTintColor: "brown",
-          }}
-        >
+        <Stack>
           <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
         </Stack>
       </Try>
