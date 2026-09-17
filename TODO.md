@@ -34,19 +34,18 @@
 - [x] Correr `eas build:configure` (requiere login EAS) — (sección 6.1)
 - [x] Editar `eas.json` (perfiles de build) — (sección 6.4, depende del paso anterior)
 
-### Bloqueante actual
+### Bloqueante actual (resuelto)
 - [x] Resolver error de `npm ci` en EAS Build (`Install dependencies`) — fix aplicado en `eas.json`/`package.json`/`.nvmrc`/lockfile, replicado sobre la app original en `src/`
-- [ ] Correr el build remoto (`npm run android:apk`, perfil `test`) para confirmar el APK
-- [ ] Agregar el config plugin de `@react-native-google-signin/google-signin` a `app.config.js` (falta, puede romper el build nativo)
-- [ ] Decidir si se elimina `src_clean_template/` (template limpio archivado) una vez confirmado el build de `src/`
+- [x] Correr el build remoto (`npm run android:apk`, perfil `test`) para confirmar el APK — build remoto de EAS pasó OK
+- [x] Decidir si se elimina `src_clean_template/` (template limpio archivado) una vez confirmado el build de `src/` — eliminado
 
 ### Limpieza post-setup
 - [x] Revisar y eliminar archivos del template que no corresponden: `src/AGENTS.md`, `src/CLAUDE.md`, `src/.claude/settings.json`
 
 ### Base técnica
-- [ ] Configurar Expo Router con estructura de navegación global
+- [ ] Configurar Expo Router con estructura de navegación global — hoy `app/` tiene el scaffold genérico del template (`Tab One`/`Tab Two`, `index`/`two`), no la navegación real. Reemplazar por bottom tabs `Hábitos` (default), `Compras`, `Finanzas`, `Configuración` según `docs/definicion/VIEWS.md`
 - [ ] Inicializar SQLite con sistema de migraciones
-- [ ] Integrar Drive backup como entidad dummy (auth + upload + download funcionales; datos reales de módulos se integran en Etapa 4)
-- [ ] Implementar tema global (`hooks/theme/`): ajustar a tokens de `docs/diseno/DESIGN.md`
+- [ ] Integrar Drive backup como entidad dummy (auth + upload + download funcionales; datos reales de módulos se integran en Etapa 4). Incluye: configurar `webClientId` real en `.env` y, si se agrega el config plugin de `@react-native-google-signin/google-signin` a `app.config.js`, solo hace falta para iOS (`iosUrlScheme`) — Android con el SDK legacy no lo necesita (autolink alcanza)
+- [ ] Implementar tema global (`hooks/theme/`): la paleta y tokens ya están definidos en `docs/diseno/DESIGN.md` (sección "Paleta y tokens concretos" — colores, tipografía, espaciado). Falta volcarlos a código: `hooks/theme/Colors.ts` hoy tiene los placeholders genéricos del template (`#2f95dc`, etc.), no los tokens reales. Solo hay paleta light definida; falta decidir si se hace dark mode
 - [ ] Determinar componentes compartidos a usar/descartar revisando el template
 - [ ] Implementar Error Boundary global
