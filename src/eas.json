@@ -1,17 +1,25 @@
 {
   "cli": {
-    "version": ">= 21.4.0",
+    "version": ">= 21.0.2",
     "appVersionSource": "remote"
   },
   "build": {
     "development": {
       "developmentClient": true,
-      "distribution": "internal"
+      "distribution": "internal",
+      "env": {
+        "APP_VARIANT": "development"
+      }
     },
-    "preview": {
+    "test": {
       "distribution": "internal",
       "android": {
         "buildType": "apk"
+      },
+      "env": {
+        "APP_VARIANT": "test",
+        "EAS_NO_FROZEN_LOCKFILE": "1",
+        "EAS_BUILD_DISABLE_NPM_CACHE": "1"
       }
     },
     "production": {

@@ -6,14 +6,14 @@ Mantener el contexto actual del trabajo para que el siguiente chat no tenga que 
 ## Estado actual
 
 - Etapa 3 — Base técnica. Etapa 2 cerrada.
-- Se reinició `src/` desde cero con `create-expo-app` (`tabs`) para volver al flujo oficial sin customizaciones.
-- `eas build:configure` ejecutado de nuevo en el proyecto limpio, con `eas.json` generado por CLI.
-- El build interno Android (`preview`) está configurado como APK (`android.buildType = apk`).
-- `package.json` incluye script estándar `android:apk` -> `eas build --profile preview --platform android --clear-cache`.
-- El build remoto más reciente sigue fallando en `npm ci` (`INSTALL_DEPENDENCIES`) y se está investigando compatibilidad de lockfile con el worker Linux de EAS.
+- El template limpio (`create-expo-app tabs`) sirvió para destrabar el fallo de `npm ci` en EAS Build. El fix real fueron 4 cambios: `env` en `eas.json` (`EAS_NO_FROZEN_LOCKFILE`, `EAS_BUILD_DISABLE_NPM_CACHE`), `engines`/`packageManager`/`.nvmrc` fijando node/npm, `eas-cli` como devDependency con script `npm exec eas -- build ...`, y `package-lock.json` regenerado sin drift.
+- Ese fix ya se replicó sobre la app original (componentes, forms, theme, Drive/Google Sign-In, etc., recuperada del historial en el commit `0366cff`), que ahora vive en `src/`. El template limpio quedó archivado en `src_clean_template/` por si hace falta comparar algo.
+- `app.config.js` de `src/` quedó de nuevo en el proyecto EAS `d6568ac7-...`: se probó cambiarlo a `ee3799a0-...` (el proyecto del template limpio) pero falló porque ese proyecto tiene slug `"src"` registrado, y no coincide con `"personal-assistant"`. El slug de un proyecto EAS no se puede cambiar localmente sin reasignarlo, así que se mantiene el proyecto original.
+- `npm ci` validado localmente sin errores sobre el lockfile regenerado de `src/`. Falta correr el build remoto (`npm run android:apk`, perfil `test`) para confirmar que pasa también en el worker de EAS.
+- Pendiente detectado (no bloqueante todavía): `@react-native-google-signin/google-signin` está en dependencies pero no tiene su config plugin listado en `app.config.js` — puede romper el build nativo de Android después de que pase la instalación.
 
 ## Próximo paso
-- Resolver el fallo de `npm ci` en EAS Build para obtener el primer APK del proyecto limpio.
+- Correr `npm run android:apk` en `src/` (perfil `test`) y confirmar que el build remoto de EAS pasa la fase de instalación y genera el APK.
 
 ## Regla de uso
 - Si cambia lo que se está haciendo, actualizar este archivo primero.

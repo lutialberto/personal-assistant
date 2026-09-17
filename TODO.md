@@ -35,7 +35,10 @@
 - [x] Editar `eas.json` (perfiles de build) — (sección 6.4, depende del paso anterior)
 
 ### Bloqueante actual
-- [ ] Resolver error de `npm ci` en EAS Build (`Install dependencies`) para generar APK interno del proyecto limpio
+- [x] Resolver error de `npm ci` en EAS Build (`Install dependencies`) — fix aplicado en `eas.json`/`package.json`/`.nvmrc`/lockfile, replicado sobre la app original en `src/`
+- [ ] Correr el build remoto (`npm run android:apk`, perfil `test`) para confirmar el APK
+- [ ] Agregar el config plugin de `@react-native-google-signin/google-signin` a `app.config.js` (falta, puede romper el build nativo)
+- [ ] Decidir si se elimina `src_clean_template/` (template limpio archivado) una vez confirmado el build de `src/`
 
 ### Limpieza post-setup
 - [x] Revisar y eliminar archivos del template que no corresponden: `src/AGENTS.md`, `src/CLAUDE.md`, `src/.claude/settings.json`
