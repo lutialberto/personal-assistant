@@ -24,7 +24,7 @@
 
 ## Etapa 3
 
-### Setup del proyecto (README del template: `C:\Users\betom\OneDrive\Desktop\Proyectos\rn-getting-started\rn-getting-started\readme.md`)
+### Setup del proyecto (README del template: `C:\Users\betom\Desktop\Proyectos\rn-getting-started\rn-getting-started\readme.md`)
 - [x] Crear proyecto: `npx create-expo-app . --template tabs` en `src/` — (sección 2)
 - [ ] Correr `setup-base.bat` (`app/`, `hooks/theme/`, `assets/fonts/`, `.vscode/`) — (sección 4.1) (pendiente tras reinicio limpio)
 - [x] Instalar dependencias — (sección 3)
@@ -44,8 +44,8 @@
 
 ### Base técnica
 - [ ] Configurar Expo Router con estructura de navegación global — hoy `app/` tiene el scaffold genérico del template (`Tab One`/`Tab Two`, `index`/`two`), no la navegación real. Reemplazar por bottom tabs `Hábitos` (default), `Compras`, `Finanzas`, `Configuración` según `docs/definicion/VIEWS.md`
-- [ ] Inicializar SQLite con sistema de migraciones
-- [ ] Integrar Drive backup como entidad dummy (auth + upload + download funcionales; datos reales de módulos se integran en Etapa 4). Incluye: configurar `webClientId` real en `.env` y, si se agrega el config plugin de `@react-native-google-signin/google-signin` a `app.config.js`, solo hace falta para iOS (`iosUrlScheme`) — Android con el SDK legacy no lo necesita (autolink alcanza)
+- [x] Inicializar SQLite con sistema de migraciones — se adelantó porque Drive backup depende de esto (ver ítem siguiente). `constants/database.ts` (nombre de la DB), `services/database/migrations.ts` (array tipado `{version, up}`, sin ORM) y `services/database/migrate.ts` (lee `PRAGMA user_version`, corre pendientes en transacción). Conectado en `app/_layout.tsx` con `<SQLiteProvider onInit={migrateDbIfNeeded}>` dentro del Error Boundary. Verificado con una migración de prueba (creaba tabla + leía en pantalla) y luego revertida, era solo para confirmar que corría — quedó funcionando OK. De paso se creó `src/metro.config.js` (no existía) con soporte de `.wasm` y headers COEP/COOP, necesarios para que `expo-sqlite` funcione en web (bug de Metro con workers en dev — `expo/expo#50244`, sin fix publicado — se evitó cambiando `app.config.js` `web.output` de `"static"` a `"single"`)
+- [ ] Integrar Drive backup como entidad dummy (auth + upload + download funcionales; datos reales de módulos se integran en Etapa 4). Referencia ya revisada en `C:\Users\betom\Desktop\Proyectos\tasks\integrations\google-drive-bkp\`, pero `hooks/useBackup.ts` ahí usa `AsyncStorage` para `lastBackupDate`, que este proyecto no usa (va en SQLite) — por eso se hace SQLite primero. Incluye: configurar `webClientId` real en `.env` y, si se agrega el config plugin de `@react-native-google-signin/google-signin` a `app.config.js`, solo hace falta para iOS (`iosUrlScheme`) — Android con el SDK legacy no lo necesita (autolink alcanza)
 - [x] Implementar tema global (`hooks/theme/`): `hooks/theme/Colors.ts` ahora usa los tokens de `docs/diseno/DESIGN.md` (colores por rol: `text`, `background`, `surface`, `border`, `primary`/`tint`, `accentStrong`, `success`, `warning`, `error`, `info`, etc.). Pendiente: tipografía y espaciado (tokens de texto/spacing) no se tocaron, solo colores
 - [x] Sacar el manejo de modo oscuro (la app es light-only, no estaba en el TODO original pero apareció como bug: algunos fondos se veían en dark). `Colors.ts` pasó de `{light, dark}` a un objeto plano; `useThemeColor` ya no lee `useColorScheme()`; `app/_layout.tsx` usa un `AppTheme` fijo (ya no alterna `DarkTheme`/`DefaultTheme` de React Navigation, que era la causa real del bug) y llama `Appearance.setColorScheme("light")` (con chequeo de soporte, ya que `react-native-web` no lo implementa) para cubrir también librerías de terceros; `app.config.js` con `userInterfaceStyle: "light"`; `app/+html.tsx` sin el `@media (prefers-color-scheme: dark)`
 - [ ] Determinar componentes compartidos a usar/descartar revisando el template

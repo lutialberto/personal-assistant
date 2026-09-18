@@ -28,7 +28,10 @@ export default {
     },
     web: {
       bundler: "metro",
-      output: "static",
+      // "single" (no "static"/"server") evita un bug de Metro con workers en el grafo lazy de dev
+      // (expo/expo#50244, sin fix publicado todavía) que rompe expo-sqlite en web.
+      // Web solo se usa para preview local durante desarrollo, no se distribuye ahí.
+      output: "single",
       favicon: "./assets/images/favicon.png",
     },
     plugins: [

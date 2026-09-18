@@ -41,7 +41,7 @@ El flujo es: la app lee y escribe siempre en el dispositivo. Drive es solo backu
 
 ### Archivos de la integración Drive
 
-Los archivos fuente están en `C:\Users\betom\OneDrive\Desktop\Proyectos\tasks\integrations\google-drive-bkp\`. Ya fueron revisados y adaptados según la arquitectura de este proyecto.
+Los archivos fuente están en `C:\Users\betom\Desktop\Proyectos\tasks\integrations\google-drive-bkp\`. Ya fueron revisados, pero el manejo de `lastBackupDate` en `hooks/useBackup.ts` usa `AsyncStorage`, que este proyecto no usa — hay que adaptarlo a SQLite antes de portarlo (ver `STATE.md`).
 
 | Archivo original | Ruta en `src/` |
 |---|---|

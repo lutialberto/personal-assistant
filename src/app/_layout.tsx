@@ -5,9 +5,12 @@ import { useEffect } from "react";
 import "react-native-reanimated";
 import { useFonts } from "@/components/texts/useFonts";
 import { Appearance, StatusBar } from "react-native";
+import { SQLiteProvider } from "expo-sqlite";
 import ToastApp from "@/components/toast/ToastApp";
 import MainFallbackApp from "@/components/containers/error/MainFallbackApp";
 import Colors from "@/hooks/theme/Colors";
+import { DATABASE_NAME } from "@/constants/database";
+import { migrateDbIfNeeded } from "@/services/database/migrate";
 
 // La app no soporta modo oscuro: el tema de navegación usa siempre los tokens de Colors.
 const AppTheme = {
@@ -63,9 +66,11 @@ function RootLayoutNav() {
     <ThemeProvider value={AppTheme}>
       <StatusBar barStyle="dark-content" backgroundColor={Colors.background} />
       <Try catch={MainFallbackApp}>
-        <Stack>
-          <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-        </Stack>
+        <SQLiteProvider databaseName={DATABASE_NAME} onInit={migrateDbIfNeeded}>
+          <Stack>
+            <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+          </Stack>
+        </SQLiteProvider>
       </Try>
     </ThemeProvider>
   );
